@@ -1,30 +1,14 @@
-{% extends 'layout.html' %} 
-{%block body%}
-
-
-<style>
-
-*{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-nav {
-
-  padding: 20px 10%;
-
+html {
+  background-color: #ed5656;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  align-items: center;
   height: 100vh;
-  background-color:#00bcd4;
 }
 
 a {
-  color: #92badd;
+  color: #f36e6e;
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -40,22 +24,16 @@ h2 {
   color: #cccccc;
 }
 
-#btn{
-background-color: #00bcd4;
-color: #fff;
-}
 /* STRUCTURE */
 
 .wrapper {
-  
-  position: absolute;               
-   top: 25%;   
-   left: 25%;
-   right: 25%;                   
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
 }
 
 #formContent {
@@ -89,7 +67,7 @@ h2.inactive {
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #f36e6e;
 }
 
 /* FORM TYPOGRAPHY*/
@@ -97,7 +75,7 @@ h2.active {
 input[type="button"],
 input[type="submit"],
 input[type="reset"] {
-  background-color: #56baed;
+  background-color: #ed5656;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -121,7 +99,7 @@ input[type="reset"] {
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background-color: #39ace7;
+  background-color: #ed5656;
 }
 
 input[type="button"]:active,
@@ -157,7 +135,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #ed5656;
 }
 
 input[type="text"]:placeholder {
@@ -187,7 +165,7 @@ input[type="password"] {
 
 input[type="password"]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #ed5656;
 }
 
 input[type="password"]:placeholder {
@@ -304,7 +282,7 @@ input[type="password"]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #ed5656;
   content: "";
   transition: width 0.2s;
 }
@@ -326,70 +304,3 @@ input[type="password"]:placeholder {
 #icon {
   width: 60%;
 }
-
-</style>
-
-
-{% with messages = get_flashed_messages() %} {% if messages%} {% for
-  message in messages %}
-  <div class="alert alert-primary alert-dismissible fade show" role="alert">
-    <strong>{{message}}</strong>
-    <button
-      type="button"
-      class="close"
-      data-dismiss="alert"
-      aria-label="Close"
-    >
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  {%endfor%} {%endif %} {%endwith%}
-
-
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark ">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Tiendas MM</a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    </div>
-    </div>
-  </nav>
-</header>
-  
-  <body>
-  <br />
-  <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-      <!-- Icon -->
-      <div class="fadeIn first">
-        <br />
-        <h3>Entrar</h3>
-      </div>
-
-      <form action="/login" method="POST">
-        <input
-          type="text"
-          id="login"
-          class="fadeIn second"
-          name="username"
-          placeholder="Nombre de usuario"
-        />
-        <input
-          type="password"
-          id="password"
-          class="fadeIn third"
-          name="password"
-          placeholder="Contraseña"
-        />
-        <input type="submit" id="btn" class="fadeIn fourth" value="Entrar" />
-      </form>
-      <div id="formFooter">
-        <a class="underlineHover" href="/signup">¿No tienes cuenta?</a>
-      </div>
-    </div>
-  </div>
-</body>
-    
-{%endblock%}

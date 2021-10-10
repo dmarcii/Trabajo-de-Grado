@@ -139,7 +139,7 @@ def adminlogin():
         return redirect(url_for('adminlogin'))
     return render_template('adminlogin.html')
 
-@app.route('/index2', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index2():
     return render_template('index2.html')
 
