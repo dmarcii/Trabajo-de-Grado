@@ -22,7 +22,7 @@ get_flashed_messages() %} {% if messages%} {% for message in messages %}
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Tiendas MM</a>
+      <a class="navbar-brand" href="/">Tiendas Mm</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
     </div>
     </div>
@@ -114,8 +114,8 @@ get_flashed_messages() %} {% if messages%} {% for message in messages %}
     <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
     
       <div class="card">
-        <h5 class="text-center mb-4">Regístrate</h5>
-        <form class="form-card" onsubmit="event.preventDefault()">
+        <h3 class="text-center mb-4">Regístrate</h3>
+        <form class="form-card"  action="/signup" method="POST" >
 
           <div class="row justify-content-between text-left">
             <div class="form-group col-sm-6 flex-column d-flex">
@@ -239,9 +239,29 @@ get_flashed_messages() %} {% if messages%} {% for message in messages %}
                 >Estado<span class="text-danger"> *</span></label
               >
               <select  id="country" name="country">
-                <option value="Afganistan">Afghanistan</option>
-                <option value="Albania">Albania</option>
-                <option value="Algeria">Algeria</option>
+                <option value="Carabobo">Carabobo</option>
+                <option value="Aragua">Aragua</option>
+                <option value="Amazonas">Amazonas</option>
+                <option value="Anzoátegui">Anzoátegui</option>
+                <option value="Apure">Apure</option>
+                <option value="Barinas">Barinas</option>
+                <option value="Bolívar">Bolívar</option>
+                <option value="Delta Amacuro">Delta Amacuro</option>
+                <option value="Distrito Capital">Distrito Capital</option>
+                <option value="Falcón">Falcón</option>
+                <option value="Guárico">Guárico</option>
+                <option value="Lara">Lara</option>
+                <option value="Mérida">Mérida</option>
+                <option value="Miranda">Miranda</option>
+                <option value="Monagas">Monagas</option>
+                <option value="Nueva Esparta">Nueva Esparta</option>
+                <option value="Portuguesa">Portuguesa</option>
+                <option value="Sucre">Sucre</option>
+                <option value="Táchira">Táchira</option>
+                <option value="Trujillo">Trujillo</option>
+                <option value="Vargas">Vargas</option>
+                <option value="Yaracuy">Yaracuy</option>
+                <option value="Zulia">Zulia</option>
              </select>
             </div>
 
@@ -252,18 +272,20 @@ get_flashed_messages() %} {% if messages%} {% for message in messages %}
               >
               <input type="date" name="dateofbirth"
               value="2002-07-22"
-              min="1920-01-01" max="2002-05-31" class="form-control">
+              min="1920-01-01" max="2003-01-01" class="form-control">
             </div>
           </div>
+          
 
+          <div class="row justify-content-between text-left">
 
-          <div class="row justify-content-end">
-            <div class="form-group col-sm-6">
+          <div class="form-group col-sm-6 flex-column d-flex">
               <button type="submit" class="btn-block ">
                 Registrarse
               </button>
             </div>
           </div>
+
         </form>
       </div>
     </div>
@@ -271,6 +293,7 @@ get_flashed_messages() %} {% if messages%} {% for message in messages %}
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
   header {
    background-color: #00bcd4;
    padding: 20px 10%;
@@ -281,6 +304,15 @@ get_flashed_messages() %} {% if messages%} {% for message in messages %}
     height: 100%;
     background-color: #00bcd4;
     background-size: 100% 100%;
+  }
+
+  nav {    
+    font-family: 'Permanent Marker', cursive;
+  }
+
+  .navbar-brand {
+    font-size: 32px;
+    letter-spacing: 1px;
   }
 
   .btn-block {
